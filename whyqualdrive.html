@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="build.css" rel="stylesheet">
+  <title>Qualdrive - Quality Driving Lessons</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+
+<body>
+
+ <!-- Navigation-->
+
+ <nav x-data="{ open: false }" class="bg-white shadow sticky inset-x-0 top-0 z-50">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-24 justify-between">
+      <div class="flex">
+        <div class="-ml-2 mr-2 flex items-center lg:hidden">
+          <!-- Mobile menu button -->
+          <button @click="open = ! open" type="button"
+            class="inline-flex items-center justify-center rounded-md p-2 text-neutral-400 hover:bg-neutral-900 hover:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-500"
+            aria-controls="mobile-menu" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <!--
+          Icon when menu is closed.
+
+          Menu open: "hidden", Menu closed: "block"
+        -->
+            <svg :class="open ? 'hidden' : ''" class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5">
+              </path>
+            </svg>
+            <!--
+          Icon when menu is open.
+
+          Menu open: "block", Menu closed: "hidden"
+        -->
+            <svg :class="open ? 'flex' : 'hidden'" class=" h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="flex flex-shrink-0 items-center">
+          <a href="" class="cursor-pointer hover:opacity-80">
+            <img class="block h-10 w-auto lg:hidden" src="QualDrive master colour logo.png"
+              alt="QualDrive Logo">
+            <img class="hidden h-12 w-auto lg:block" src="QualDrive master colour logo.png"
+              alt="QualDrive Logo">
+          </a>
+
+        </div>
+        <div>
+
+        </div>
+        <div class="hidden md:ml-12 lg:flex md:space-x-6">
+          <!-- Current: "border-red-500 text-neutral-900", Default: "border-transparent text-neutral-500 hover:border-neutral-300 hover:text-neutral-700" -->
+
+          <div x-data="{ open: false }" class="relative inline-flex items-center">
+            <button @click="open = ! open" type="button"
+              class="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900 pt-0.5"
+              aria-expanded="false">
+              <span class="inline-flex justify-center ">Where to start</span>
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                  clip-rule="evenodd" />
+              </svg>
+            </button>
+
+            <!--
+            Flyout menu, show/hide based on flyout menu state.
+        
+            Entering: "transition ease-out duration-200"
+              From: "opacity-0 translate-y-1"
+              To: "opacity-100 translate-y-0"
+            Leaving: "transition ease-in duration-150"
+              From: "opacity-100 translate-y-0"
+              To: "opacity-0 translate-y-1"
+          -->
+            <div x-show="open" x-transition:enter="transition ease-out duration-300"
+              x-transition:enter-start="opacity-0 scale-100" x-transition:enter-end="opacity-100 scale-100"
+              x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+              x-transition:leave-end="opacity-0 scale-100" @click.outside="open = false"
+              class="absolute top-12 left-4 left-1/2 z-10 mt-5 flex w-screen max-w-min -translate-x-1/2 px-4">
+              <div
+                class="w-56 shrink rounded-xl bg-white p-4 text-sm font-semibold leading-6 text-gray-900 shadow-lg ring-1 ring-gray-900/5">
+                <a href="wheretostart-provisional-license.html" class="block p-2 hover:text-red-600">Provisional
+                  License</a>
+                <a href="wheretostart-booking-theory-test.html" class="block p-2 hover:text-red-600">Booking Theory
+                  Test </a>
+                <a href="wheretostart-booking-lessons.html" class="block p-2 hover:text-red-600">Book your instructor
+                  led lessons </a>
+                <a href="wheretostart-booking-driving-test.html" class="block p-2 hover:text-red-600">Booking your
+                  practical Driving test</a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <a href="whyqualdrive.html"
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-neutral-500 hover:border-red-500 hover:text-neutral-700">Why
+            Qualdrive</a>
+            <a href="index.html#pricing"
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-neutral-500 hover:border-red-500 hover:text-neutral-700">
+            Driving Lessons</a>
+          <a href="index.html#areas"
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-neutral-500 hover:border-red-500 hover:text-neutral-700">Areas
+            Covered</a>
+          <a href="contact.html"
+            class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-neutral-500 hover:border-red-500 hover:text-neutral-700">Contact</a>
+        </div>
+      </div>
+
+      <div class="flex flex-1 justify-end">
+
+        <div class="flex hidden lg:flex space-x-4 items-center mr-4">
+          <a href="https://www.facebook.com/Qualdrive" class="text-neutral-500 hover:text-red-500">
+            <span class="sr-only">Facebook</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                clip-rule="evenodd" />
+            </svg>
+          </a>
+
+          <a href="tel:07340079949" class="text-neutral-500 hover:text-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+          </a>
+
+        </div>
+
+        <div class="flex items-center">
+          <div class="flex-shrink-0">
+            <a href="tel:0333 772 2725">
+              <button type="button"
+                class="relative inline-flex items-center gap-x-1.5 rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
+                  <path fill-rule="evenodd"
+                    d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"
+                    clip-rule="evenodd" />
+                </svg>
+
+                0333 772 2725
+              </button>
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu state. -->
+    <div x-show="open" x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="opacity-0 scale-100" x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-100" @click.outside="open = false" class="lg:hidden bg-white h-screen "
+      id="mobile-menu">
+      <div class="space-y-1 my-auto">
+        <div class="my-4">
+          <div class="py-4 ">
+            <a href="wheretostart.html"
+              class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-xs font-light uppercase tracking-wide text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">Where
+              to start</a>
+
+            <a href="wheretostart-provisional-license.html"
+              class="border-l-2 border-red-400 ml-4 block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">
+              
+              Provisional License</a>
+            <a href="wheretostart-booking-theory-test.html"
+              class="border-l-2 border-red-400 ml-4 block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">
+              
+              Booking Theory Test</a>
+            <a href="wheretostart-booking-lessons.html"
+              class="border-l-2 border-red-400 ml-4 block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">
+              
+              Book your instructor led lessons</a>
+            <a href="wheretostart-booking-driving-test.html"
+              class="border-l-2 border-red-400 ml-4 block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">
+             
+              Booking your practical Driving test</a>
+
+
+          </div>
+
+
+          <a href="whyqualdrive.html"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">Why
+            Qualdrive</a>
+          <a href="areascovered.html"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">Areas
+            Covered</a>
+          <a href="areascovered.html"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">Gift
+            Vouchers</a>
+          <a href="contact.html"
+            class="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-neutral-500 hover:border-neutral-300 hover:bg-neutral-50 hover:text-neutral-700 sm:pl-5 sm:pr-6">Contact</a>
+        </div>
+
+        <div class="border-t border-neutral-200 mt-4">
+
+          <div class="space-y-1 mt-4">
+            <a href="https://www.facebook.com/Qualdrive"
+              class="block px-4 py-2 text-base font-medium text-neutral-500 hover:bg-neutral-900 hover:text-neutral-800 sm:px-6">Facebook</a>
+            <a href="tel:07340079949"
+              class="block px-4 py-2 text-base font-medium text-neutral-500 hover:bg-neutral-900 hover:text-neutral-800 sm:px-6">Whatsapp</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+</nav>
+
+  <!-- Header -->
+  <header class=" hidden sticky inset-x-0 top-0 z-50">
+    <div class="sticky top-0 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg">
+      <nav class="flex items-center justify-between p-6 lg:px-8 max-w-7xl mx-auto" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">Qualdrive</span>
+            <img class="h-12 w-auto" src="QualDrive master colour logo.png" alt="QualDrive">
+          </a>
+        </div>
+
+        <div class="hidden">
+          <a href="mailto:contact@qualdrive.co.uk?subject=Website Enquiry"
+            class="rounded-md bg-red-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+            Contact</a>
+
+        </div>
+
+
+        <div class="flex sm:hidden">
+          <button type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-neutral-700">
+            <span class="sr-only">Open main menu</span>
+
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+            </svg>
+          </button>
+
+        </div>
+
+        <div class="hidden lg:flex lg:gap-x-8">
+          <a href="wheretostart.html" class="text-sm font-medium leading-6 text-neutral-900 hover:opacity-60">Where to
+            start</a>
+
+          <a href="whyqualdrive.html" class="text-sm font-medium leading-6 text-neutral-900 hover:opacity-60">Why
+            Qualdrive</a>
+
+          <a href="areascovered.html" class="text-sm font-medium leading-6 text-neutral-900 hover:opacity-60">Areas Covered</a>
+
+          <a href="#lessons" class="text-sm font-medium leading-6 text-neutral-900 hover:opacity-60">Driving
+            Lessons</a>
+
+          <a href="#giftvoucher" class="text-sm font-medium leading-6 text-neutral-900 hover:opacity-60">Gift
+            Vouchers</a>
+        </div>
+
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+
+          <div class="flex space-x-4 items-center mr-4">
+            <a href="https://www.facebook.com/Qualdrive" class="text-neutral-900 hover:text-red-500">
+              <span class="sr-only">Facebook</span>
+              <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                  clip-rule="evenodd" />
+              </svg>
+            </a>
+
+            <a href="tel:07340079949" class="text-neutral-900 hover:text-red-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+              </svg>
+            </a>
+
+          </div>
+          <a href="mailto:contact@qualdrive.co.uk?subject=Website Enquiry"
+            class="rounded-md bg-red-600 px-4 py-3 text-sm font-medium text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+            Contact</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile menu, show/hide based on menu open state. -->
+    <div class="hidden" role="dialog" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neutral-900/10">
+        <div class="flex items-center justify-between">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="QualDrive master colour logo.png" alt="Qualdrive">
+          </a>
+          <button type="button" class="-m-2.5 rounded-md p-2.5 text-neutral-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-neutral-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-900 hover:bg-neutral-50">Product</a>
+
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-900 hover:bg-neutral-50">Features</a>
+
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-900 hover:bg-neutral-50">Marketplace</a>
+
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-neutral-900 hover:bg-neutral-50">Company</a>
+            </div>
+            <div class="py-6">
+              <a href="mailto:contact@qualdrive.co.uk?subject=Notify Me When The Site Launches"
+                class="rounded-md bg-red-600 px-9 py-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600">
+                Notify Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <main>
+    <div class="bg-red-600 text-white py-3">
+      <div class="max-w-7xl mx-auto text-center text-md">
+        <a href="#lessons" class="hover:opacity-90">Lessons from £33.00 per hour* - View Pricing</a>
+      </div>
+    </div>
+
+
+
+    <!-- Why Qualdrive Section -->
+    <div id="why">
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Why Learn with Qualdrive?</h2>
+
+          </div>
+          <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+            <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+              <div class="flex flex-col">
+                <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <svg class="h-5 w-5 flex-none text-red-600" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
+                    <path
+                      d="M13.06 15.473a48.45 48.45 0 017.666-3.282c.134 1.414.22 2.843.255 4.285a.75.75 0 01-.46.71 47.878 47.878 0 00-8.105 4.342.75.75 0 01-.832 0 47.877 47.877 0 00-8.104-4.342.75.75 0 01-.461-.71c.035-1.442.121-2.87.255-4.286A48.4 48.4 0 016 13.18v1.27a1.5 1.5 0 00-.14 2.508c-.09.38-.222.753-.397 1.11.452.213.901.434 1.346.661a6.729 6.729 0 00.551-1.608 1.5 1.5 0 00.14-2.67v-.645a48.549 48.549 0 013.44 1.668 2.25 2.25 0 002.12 0z" />
+                    <path
+                      d="M4.462 19.462c.42-.419.753-.89 1-1.394.453.213.902.434 1.347.661a6.743 6.743 0 01-1.286 1.794.75.75 0 11-1.06-1.06z" />
+                  </svg>
+
+                  ADI instructor
+                </dt>
+                <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p class="flex-auto">At Qualdrive we ensure our Driving Instructors are trained to a high standard to
+                    give pupils the best knowledge to drive safely & confidently on the roads.</p>
+
+                </dd>
+              </div>
+              <div class="flex flex-col">
+                <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="h-5 w-5 flex-none text-red-600">
+                    <path
+                      d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+                    <path fill-rule="evenodd"
+                      d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Online booking system
+                </dt>
+                <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p class="flex-auto">Peace of mind with our online booking system with secure payments.</p>
+
+                </dd>
+              </div>
+              <div class="flex flex-col">
+                <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="h-5 w-5 flex-none text-red-600">
+                    <path d="M10.5 18.75a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" />
+                    <path fill-rule="evenodd"
+                      d="M8.625.75A3.375 3.375 0 005.25 4.125v15.75a3.375 3.375 0 003.375 3.375h6.75a3.375 3.375 0 003.375-3.375V4.125A3.375 3.375 0 0015.375.75h-6.75zM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 017.5 19.875V4.125z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Total drive Pupil and parent app
+                </dt>
+                <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p class="flex-auto">With our total drive app both parent and pupil have access to reflective logs,
+                    feedback and progress reports.</p>
+
+                </dd>
+              </div>
+              <div class="flex flex-col">
+                <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="h-5 w-5 flex-none text-red-600">
+                    <path
+                      d="M4.5 6.375a4.125 4.125 0 118.25 0 4.125 4.125 0 01-8.25 0zM14.25 8.625a3.375 3.375 0 116.75 0 3.375 3.375 0 01-6.75 0zM1.5 19.125a7.125 7.125 0 0114.25 0v.003l-.001.119a.75.75 0 01-.363.63 13.067 13.067 0 01-6.761 1.873c-2.472 0-4.786-.684-6.76-1.873a.75.75 0 01-.364-.63l-.001-.122zM17.25 19.128l-.001.144a2.25 2.25 0 01-.233.96 10.088 10.088 0 005.06-1.01.75.75 0 00.42-.643 4.875 4.875 0 00-6.957-4.611 8.586 8.586 0 011.71 5.157v.003z" />
+                  </svg>
+
+                  One to one tuition
+                </dt>
+                <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p class="flex-auto">Once you've been assigned to a Driving Instructor with us you will continue your
+                    journey with them until you become a new independent driver. </p>
+
+                </dd>
+              </div>
+              <div class="flex flex-col">
+                <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                    class="h-5 w-5 flex-none text-red-600">
+                    <path fill-rule="evenodd"
+                      d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM9.763 9.51a2.25 2.25 0 013.828-1.351.75.75 0 001.06-1.06 3.75 3.75 0 00-6.38 2.252c-.033.307 0 .595.032.822l.154 1.077H8.25a.75.75 0 000 1.5h.421l.138.964a3.75 3.75 0 01-.358 2.208l-.122.242a.75.75 0 00.908 1.047l1.539-.512a1.5 1.5 0 01.948 0l.655.218a3 3 0 002.29-.163l.666-.333a.75.75 0 10-.67-1.342l-.667.333a1.5 1.5 0 01-1.145.082l-.654-.218a3 3 0 00-1.898 0l-.06.02a5.25 5.25 0 00.053-1.794l-.108-.752H12a.75.75 0 000-1.5H9.972l-.184-1.29a1.863 1.863 0 01-.025-.45z"
+                      clip-rule="evenodd" />
+                  </svg>
+
+                  Competitive prices
+                </dt>
+                <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p class="flex-auto">At Qualdrive our prices are extremely competitive. Reduced pricing for 10 lessons
+                    or more & gift vouchers available. </p>
+
+                </dd>
+              </div>
+              <div class="flex flex-col">
+                <dt class="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
+                  <svg class="h-5 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor"
+                    aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dash cam footage to review & learn from
+                </dt>
+                <dd class="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
+                  <p class="flex-auto">View previous lessons with dashcam footage from previous lessons to review and
+                    learn from.</p>
+
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Driving Lessons / What will I Learn COMPLETE -->
+
+    <div class="bg-red-50 py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+          <div>
+
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-neutral-900 sm:text-5xl">What will I Learn</h2>
+          </div>
+          <dl class="col-span-2 grid grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 text-white sm:grid-cols-2 ">
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Cockpit drills
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Car controls
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Mirrors vision and Use
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Moving off and stopping
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Clutch and brake control
+              </dt>
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Steering
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Changing gears
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Junctions
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Roundabouts
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Planning ahead
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Dual carriageways
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Latest manoeuvres
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Independent driving and Sat Nav instruction
+              </dt>
+
+            </div>
+            <div class="relative pl-9">
+              <dt class="font-semibold text-neutral-900">
+                <svg class="absolute left-0 top-1 h-5 w-5 text-red-500" viewBox="0 0 20 20" fill="currentColor"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd" />
+                </svg>
+                Show me / tell me questions
+              </dt>
+
+            </div>
+
+          </dl>
+        </div>
+      </div>
+    </div>
+
+  
+      <!-- Driving Lessons / Pricing COMPLETE-->
+      <div id="lessons"></div>
+      <div class="bg-neutral-50 py-24 sm:py-32">
+        <div class="mx-auto max-w-[1920px] px-6 lg:px-8">
+          <div class="mx-auto max-w-4xl text-center">
+
+            <h2 class="mt-2 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Pricing plans for Driving Lessons
+            </h2>
+          </div>
+  
+  
+  
+  
+          <div
+            class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 md:max-w-2xl md:grid-cols-2 lg:max-w-4xl xl:mx-0 xl:max-w-none xl:grid-cols-4">
+            <div class="rounded-3xl p-8 ring-1 ring-gray-200">
+              <h3 id="tier-hobby" class="text-lg font-semibold leading-8 text-gray-900">1 Hour Lesson</h3>
+              <p class="mt-4 text-sm leading-6 text-gray-600">1 Hour of driving tuition fully insured</p>
+              <p class="mt-6 flex items-baseline gap-x-1">
+                <!-- Price, update based on frequency toggle state -->
+                <span class="text-4xl font-bold tracking-tight text-gray-900">£35.00</span>
+  
+              </p>
+              <a href="#" aria-describedby="tier-hobby"
+                class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 text-red-600 ring-1 ring-inset ring-red-200 hover:ring-red-300">Buy
+                plan</a>
+              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dual control vehicle
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Public liability insurance
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dash cam
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Tailored lesson for each individuals learning styles and any additional needs
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Feedback and end of lesson debrief
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Progress report update via your app
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-3xl p-8 ring-1 ring-gray-200">
+              <h3 id="tier-freelancer" class="text-lg font-semibold leading-8 text-gray-900 capitalize">1.5 hour lesson
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-gray-600">1 and a half hours of driving tuition Fully insured</p>
+              <p class="mt-6 flex items-baseline gap-x-1">
+                <!-- Price, update based on frequency toggle state -->
+                <span class="text-4xl font-bold tracking-tight text-gray-900">£52.50</span>
+  
+              </p>
+              <a href="#" aria-describedby="tier-freelancer"
+                class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 text-red-600 ring-1 ring-inset ring-red-200 hover:ring-red-300">Buy
+                plan</a>
+              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dual control vehicle
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Public liability insurance
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dash cam
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Tailored lesson for each individuals learning styles and any additional needs
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Feedback and end of lesson debrief
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Progress report update via your app.
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-3xl p-8 ring-2 ring-red-600">
+              <h3 id="tier-startup" class="text-lg font-semibold leading-8 text-red-600 capitalize">10 hour block booking
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-gray-600">10 hours’ worth of tuition to be booked in and used within 5
+                weeks Fully insured</p>
+              <p class="mt-6 flex items-baseline gap-x-1">
+                <!-- Price, update based on frequency toggle state -->
+                <span class="text-4xl font-bold tracking-tight text-gray-900">£330.00</span>
+              </p>
+              <a href="#" aria-describedby="tier-startup"
+                class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 bg-red-600 text-white shadow-sm hover:bg-red-500">Buy
+                plan</a>
+              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dual control vehicle
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Public liability insurance
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dash cam
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Tailored lesson for each individuals learning styles and any additional needs
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Feedback and end of lesson debrief
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Progress report update via your app.
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-3xl p-8 ring-1 ring-gray-200">
+              <h3 id="tier-enterprise" class="text-lg font-semibold leading-8 text-gray-900 capitalize">2 hour lesson
+              </h3>
+              <p class="mt-4 text-sm leading-6 text-gray-600">2 hours of driving tuition Fully insured</p>
+              <p class="mt-6 flex items-baseline gap-x-1">
+                <!-- Price, update based on frequency toggle state -->
+                <span class="text-4xl font-bold tracking-tight text-gray-900">£65.00</span>
+              </p>
+              <a href="#" aria-describedby="tier-enterprise"
+                class="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600 text-red-600 ring-1 ring-inset ring-red-200 hover:ring-red-300">Buy
+                plan</a>
+              <ul role="list" class="mt-8 space-y-3 text-sm leading-6 text-gray-600">
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dual control vehicle
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Public liability insurance
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Dash cam
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Tailored lesson for each individuals learning styles and any additional needs
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Feedback and end of lesson debrief
+                </li>
+                <li class="flex gap-x-3">
+                  <svg class="h-6 w-5 flex-none text-red-600" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd" />
+                  </svg>
+                  Progress report update via your app.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+
+     <!-- Gift Voucher -->
+     <div id="giftvoucher" class="bg-white">
+      <div class="relative bg-neutral-900">
+        <!-- Decorative image and overlay -->
+        <div aria-hidden="true" class="absolute inset-0 overflow-hidden">
+          <img
+            src="https://images.pexels.com/photos/7144214/pexels-photo-7144214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="Driving Lessons Gift Voucher" class="h-full w-full object-cover object-center">
+        </div>
+        <div aria-hidden="true" class="absolute inset-0 bg-red-700 opacity-80"></div>
+
+        <div class="relative mx-auto flex max-w-3xl flex-col items-center px-6 py-32 text-center sm:py-64 lg:px-0">
+          <h1 class="text-4xl font-bold tracking-tight text-white lg:text-6xl">Driving Lesson Gift Vouchers</h1>
+          <p class="mt-4 text-xl max-w-2xl text-white">The best gift that you could get someone is a step towards their independence. Buy a gift voucher today!</p>
+          <a href="contact.html"
+            class="mt-8 inline-block rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-neutral-900 hover:bg-neutral-900">Buy
+            Gift Voucher</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+<!-- Pre Footer -->
+<div class="bg-white py-8 sm:py-10">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:max-w-none">
+      <div class="mx-auto grid grid-cols-1 items-start gap-x-8 gap-y-10 sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:grid-cols-4">
+        <img class="col-span-2 max-h-12 w-full object-contain object-center lg:col-span-1" src="ADI-black.png" alt="ADI-black" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain object-center lg:col-span-1" src="DIA-Logo-Blue-Horizontal-Logo_.png" alt="DIA-Logo-Blue-Horizontal-Logo" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain object-center lg:col-span-1" src="flat-driving-app.png" alt="Slat-driving-app" width="158" height="48">
+        <img class="col-span-2 max-h-12 w-full object-contain object-center lg:col-span-1" src="DIAcompany-Logos-04-300x300.jpg" alt="DIAcompany-Logos" width="158" height="48">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Footer -->
+
+<footer class="bg-white border-t" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="mx-auto max-w-7xl px-6 pb-8 py-16 sm:py-24 lg:px-8 lg:py-16">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <div class="space-y-8">
+        <img class="h-10" src="QualDrive master colour logo.png" alt="Company name">
+        <p class="text-sm leading-6 text-neutral-600">QualDrive provides a top-quality driving education that is
+          tailored
+          to meet the individual needs of each learner driver.</p>
+
+        <div>
+          <p class="text-sm leading-6 font-bold text-neutral-900">Business Number:
+            <span class="font-normal">
+              <a href="tel:0333 772 2725" class="text-red-600 hover:opacity-80 font-bold">0333 772 2725</a><br>
+            </span>
+          </p>
+          <p class="text-sm leading-6 font-bold text-neutral-900">Contact Us:
+            <span class="font-normal">
+              <a href="mailto:contact@qualdrive.co.uk" class="text-red-600 hover:opacity-80 font-bold">contact@qualdrive.co.uk</a><br>
+            </span>
+          </p>
+
+        </div>
+
+
+        <p class="text-sm leading-6 font-bold text-neutral-900">Business Hours:
+          <span class="font-normal">
+            <br>Mon till Sat 08:00 - 20:00 Sun - Closed</span>
+        </p>
+
+        <p class="text-sm leading-6 font-bold text-neutral-900">Business Address:
+          <span class="font-normal">
+            <br>The Business Centre, Edward Street, Redditch, B97 6HA
+          </span>
+        </p>
+
+
+
+        <div class="flex space-x-6">
+          <a href="https://www.facebook.com/Qualdrive" class="text-neutral-900 hover:text-red-500">
+            <span class="sr-only">Facebook</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd"
+                d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                clip-rule="evenodd" />
+            </svg>
+          </a>
+
+          <a href="tel:07340079949" class="text-neutral-900 hover:text-red-500">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+            </svg>
+          </a>
+
+
+
+        </div>
+      </div>
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="hidden sm:flex md:grid-cols-2 md:gap-8">
+          <div></div>
+          <div></div>
+        </div>
+        <div class="grid md:grid-cols-2 md:gap-8">
+          <div>
+            <h3 class="text-sm font-semibold leading-6 text-neutral-900">Links</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="index.html/#wheretostart"
+                  class="text-sm leading-6 text-neutral-600 hover:text-neutral-900">Where to start</a>
+              </li>
+
+              <li>
+                <a href="index.html/#why" class="text-sm leading-6 text-neutral-600 hover:text-neutral-900">Why
+                  Qualdrive</a>
+              </li>
+
+              <li>
+                <a href="index.html/#areas" class="text-sm leading-6 text-neutral-600 hover:text-neutral-900">Areas
+                  Covered</a>
+              </li>
+
+              <li>
+                <a href="index.html/#lessons"
+                  class="text-sm leading-6 text-neutral-600 hover:text-neutral-900">Driving Lessons</a>
+              </li>
+
+              <li>
+                <a href="index.html/#giftvoucher"
+                  class="text-sm leading-6 text-neutral-600 hover:text-neutral-900">Gift Vouchers</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mt-10 md:mt-0">
+            <h3 class="text-sm font-semibold leading-6 text-neutral-900">Support</h3>
+            <ul role="list" class="mt-6 space-y-4">
+              <li>
+                <a href="terms-and-conditions.html"
+                  class="text-sm leading-6 text-neutral-600 hover:text-red-600">Terms
+                  & Conditions</a>
+              </li>
+
+              <li>
+                <a href="privacy-policy.html" class="text-sm leading-6 text-neutral-600 hover:text-red-600">Privacy
+                  Policy</a>
+              </li>
+
+              <li>
+                <a href="terms-and-conditions.html#cancellation"
+                  class="text-sm leading-6 text-neutral-600 hover:text-red-600">Cancellation Policy</a>
+              </li>
+
+              <li>
+                <a href="/contact.html" class="text-sm leading-6 text-neutral-600 hover:text-red-600">Contact Us</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-16 border-t border-neutral-900/10 pt-8 sm:mt-20 lg:mt-24">
+      <p class="text-xs">
+        Website Design By
+        <a href="https://mcleandesign.co/" class="text-xs font-bold animate-pulse">Mclean</a>
+      </p>
+
+      <p class="text-xs leading-5 text-neutral-500">&copy; 2023 Qualdrive, Inc. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
