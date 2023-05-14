@@ -1287,44 +1287,106 @@
     </div>
 
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div>
-        <div class="_6ks">
-          <a
-        href="https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.google.com%2Fmaps%2Freviews%2Fdata%3D%214m8%2114m7%211m6%212m5%211sChZDSUhNMG9nS0VJQ0FnSUN4N0pxNVF3EAE%212m1%211s0x0%3A0xf9a3f49d370ff7a8%213m1%211s2%401%3ACIHM0ogKEICAgICx7Jq5Qw%257CCgsIvoH5ogYQkJzBXw%257C%3Fhl%3Den-US%26shorturl%3D1%26fbclid%3DIwAR2PFwCD5XZD3FTk77gY7wHfffM2LvzmB1E_m38JDuCoCpRPQ-a-EzFFddU&amp;h=AT17BZpWRfD03qvLtCpOZDFiF2JUGwgrEXchMN8mJt0otQOHwGefHb_iectQG7wlNrnfaph18D23rc2y5qYhmT-t7GySX4C_--mDegibsKRigA5W2FCyMUDAy1OAVc5AKlW566JxGwyG"
-        aria-describedby="u_0_e_pQ"
-        aria-label="Google review of QualDrive Driving School by ogunbambi seun" tabindex="-1"
-        target="_blank" rel="noopener nofollow" data-lynx-mode="asynclazy">
-        <div class="accessible_elem inlineBlock" id="u_0_e_pQ">★★★★★ "Garry is definitely a genius and
-          a magician😄. He teaches the rudiments of driving and this simplifies the test for you. I
-          passed my test in just ONE WEEK of learning with Garry! He is very friendly and keep you
-          calm at all times, always ready to go over things again whenever requ...</div>
-        <div class="_6l- __c_">
-          <div class="uiScaledImageContainer _6m5 fbStoryAttachmentImage"
-            style="width:524px;height:273.64444444444px;"><img class="scaledImageFitWidth img"
-              src="https://external-lcy1-1.xx.fbcdn.net/emg1/v/t13/16763244797046440359?url=https%3A%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPUealnhFxyb47T4YcgAuDL3QEPKo9-EHMSIr91%3Ds1200-k-no&amp;fb_obo=1&amp;utld=googleusercontent.com&amp;stp=c0.5000x0.5000f_dst-emg0_p540x282_q75_u&amp;ccb=13-1&amp;oh=06_AbG1qNEMNYdE3uBvbk1ISW4gWtp6v0k2u_YBmkxUJk6apw&amp;oe=646263CF&amp;_nc_sid=670e9d"
-              data-src="https://external-lcy1-1.xx.fbcdn.net/emg1/v/t13/16763244797046440359?url=https%3a%2f%2flh5.googleusercontent.com%2fp%2fAF1QipPUealnhFxyb47T4YcgAuDL3QEPKo9-EHMSIr91%3ds1200-k-no&amp;fb_obo=1&amp;utld=googleusercontent.com&amp;stp=c0.5000x0.5000f_dst-emg0_p540x282_q75_u&amp;ccb=13-1&amp;oh=06_AbG1qNEMNYdE3uBvbk1ISW4gWtp6v0k2u_YBmkxUJk6apw&amp;oe=646263CF&amp;_nc_sid=670e9d"
-              style="top:0px;" alt="" caption="" width="524" height="274"></div>
-        </div>
-      </a></div></div>
-    </div>
 
 
 
    <!-- Reviews -->
-   <div id="reviews" class="overflow-hidden bg-white py-24 sm:py-32 hidden">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+   <!--
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/typography'),
+    ],
+  }
+  ```
+-->
+<div class="bg-white">
+  <div>
+    <h2 class="sr-only">Customer Reviews</h2>
 
-    <div class="elfsight-app-e1c6ce7d-c866-4f5d-9b3f-db71c39af0db" >
-      <iframe src='https://sandbox.elfsightcdn.com/e1c6ce7d-c866-4f5d-9b3f-db71c39af0db' width='100%' height='1000' frameborder='0'></iframe>
-    </div>
-    </div>
-    
+    <div class="-my-10">
+      <div class="flex space-x-4 text-sm text-gray-500">
+        <div class="flex-none py-10">
+          <img src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-100">
+        </div>
+        <div class="flex-1 py-10">
+          <h3 class="font-medium text-gray-900">Emily Selman</h3>
+          <p><time datetime="2021-07-16">July 16, 2021</time></p>
 
+          <div class="mt-4 flex items-center">
+            <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <p class="sr-only">5 out of 5 stars</p>
+
+          <div class="prose prose-sm mt-4 max-w-none text-gray-500">
+            <p>This icon pack is just what I need for my latest project. There's an icon for just about anything I could ever need. Love the playful look!</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex space-x-4 text-sm text-gray-500">
+        <div class="flex-none py-10">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=256&h=256&q=80" alt="" class="h-10 w-10 rounded-full bg-gray-100">
+        </div>
+        <div class="flex-1 py-10 border-t border-gray-200">
+          <h3 class="font-medium text-gray-900">Hector Gibbons</h3>
+          <p><time datetime="2021-07-12">July 12, 2021</time></p>
+
+          <div class="mt-4 flex items-center">
+            <!-- Active: "text-yellow-400", Default: "text-gray-300" -->
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+            <svg class="text-yellow-400 h-5 w-5 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <p class="sr-only">5 out of 5 stars</p>
+
+          <div class="prose prose-sm mt-4 max-w-none text-gray-500">
+            <p>Blown away by how polished this icon pack is. Everything looks so consistent and each SVG is optimized out of the box so I can use it directly with confidence. It would take me several hours to create a single icon this good, so it's a steal at this price.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- More reviews... -->
+    </div>
   </div>
+</div>
+
+
+
+
+
+
 
   <style>
     .jgxjWi {
